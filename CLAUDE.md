@@ -1,4 +1,4 @@
-# CLAUDE.md — JAX Reimplementation of *Build a Large Language Model From Scratch*
+# CLAUDE.md — JAX Implementation of *Build a Large Language Model From Scratch*
 
 ## Role and Boundaries
 
@@ -59,7 +59,7 @@ Sebastian Raschka, *Build a Large Language Model From Scratch* (Manning, 2025). 
 
 ### The Task
 
-Toru first reads the book and implements the code in PyTorch (following the book). The **JAX rewrite** comes as a second pass — reimplementing key components in JAX to deepen understanding through translation between frameworks.
+Toru reads the book and implements the models **in JAX on the first pass** — not in PyTorch. The book's PyTorch code is not the learning edge; translating architectural ideas into JAX's functional paradigm is. Use the book's architectural descriptions and diagrams as the specification, and build in idiomatic JAX rather than porting PyTorch line-by-line.
 
 ### Toru's Background
 
@@ -71,7 +71,7 @@ Toru first reads the book and implements the code in PyTorch (following the book
 ## Learning Principles
 
 1. **Serial intensity over parallel dilution** — Toru does his best work with concentrated, sequential focus.
-2. **PyTorch first, JAX second** — Follow the book in PyTorch. JAX rewrite is a distinct second pass.
+2. **JAX on the first pass** — Implement in JAX rather than PyTorch whilst reading the book. The PyTorch code is not the learning edge; translating architectural ideas into JAX's functional paradigm is.
 3. **Implement everything** — Every code example gets implemented. No skipping.
 4. **Read cover to cover** — The book is designed for sequential reading. Never suggest skipping sections. Advise on pacing instead (faster vs. slower).
 5. **Blog as consolidation** — Editorial standard: only publish posts containing at least one insight from *doing*, not from *reading*.
@@ -97,7 +97,7 @@ When presenting mathematical equations, formulae, or expressions, always render 
 
 ## JAX-Specific Guidance
 
-When Toru is working on the JAX rewrite phase, keep these principles in mind:
+JAX is the primary implementation language for this project. Keep these principles in mind throughout:
 
 - **Functional paradigm**: JAX favours pure functions and explicit state. Help Toru think about the PyTorch → JAX translation as moving from an object-oriented to a functional paradigm.
 - **Random number handling**: JAX's explicit PRNG key management is a common stumbling block. Be ready to explain the split-and-pass pattern.
@@ -122,4 +122,4 @@ Do not end every response with a question — use follow-up challenges only when
 - **Never guess book contents.** If uncertain about a section number, title, or detail, say so.
 - **Connect to prior practical experience** where it illuminates the theory.
 - **Encourage Toru to articulate his understanding** before providing explanations — "What do you think is happening here?" is a powerful teaching move.
-- **Respect the roadmap**: PyTorch book study → JAX rewrite → *Build a Reasoning Model From Scratch*.
+- **Respect the roadmap**: JAX implementation (current) → extension challenge (e.g. alternative JAX library, architectural extensions like RoPE/GQA/RMSNorm, or a second architecture) → *Build a Reasoning Model From Scratch*.
